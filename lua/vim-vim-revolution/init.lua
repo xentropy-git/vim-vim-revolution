@@ -1,8 +1,12 @@
- local M = {}
+local M = {}
 
+function M.start()
 
-function M.init()
-    print("init")
+    -- create new buffer and switch to it
+    vim.cmd("enew")
+    local a = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_lines(a, 0, -1, false, {"Hello, world!"})
+
 end
-print("TEST")
+
 return M
